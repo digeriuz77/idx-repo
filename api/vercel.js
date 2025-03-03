@@ -5,6 +5,12 @@ const express = require('express');
 const path = require('path');
 const cors = require('cors');
 
+// Configure Google API key for Vercel environment
+if (process.env.GOOGLE_API_KEY) {
+  process.env.GENKIT_GOOGLEAI_API_KEY = process.env.GOOGLE_API_KEY;
+  console.log('Google API Key configured for Vercel environment');
+}
+
 // Initialize Express
 const app = express();
 
@@ -25,7 +31,8 @@ app.get('/api/health', (req, res) => {
     status: 'ok', 
     message: 'MI-Dojo API is running on Vercel',
     environment: process.env.NODE_ENV,
-    google_api_key: process.env.GOOGLE_API_KEY ? 'configured' : 'missing'
+    google_api_key: process.env.GOOGLE_API_KEY ? 'configured' : 'missing',
+    genkit_api_key: process.env.GENKIT_GOOGLEAI_API_KEY ? 'configured' : 'missing'
   });
 });
 
