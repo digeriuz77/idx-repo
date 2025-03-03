@@ -19,12 +19,6 @@ const PORT = process.env.PORT || 3000;
 // Create HTTP server
 const server = http.createServer(app);
 
-// Update the port setting to work with Vercel
-const PORT = process.env.PORT || 3000;
-
-// Make sure the server listens on the correct port
-// The rest of your code remains the same
-
 // Create WebSocket server
 const wss = new WebSocketServer({ server });
 
