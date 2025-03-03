@@ -122,6 +122,18 @@ For production deployment:
 5. Add monitoring and logging
 6. Set up HTTPS for secure communication
 
+### Deploying to Vercel
+
+To deploy MI-Dojo to Vercel:
+
+1. Push the repository to GitHub
+2. Import the project in Vercel
+3. Configure the following environment variables:
+   - `GOOGLE_API_KEY`: Your Google AI API key for Gemini
+   - `NODE_ENV`: Set to `production`
+
+The deployment includes a `vercel.json` configuration file that properly routes API requests and serves static files.
+
 ## Development Context & Implementation Guide
 
 This document outlines the development approach for MI-Dojo, an AI-powered application for Motivational Interviewing (MI) practice with simulated personas. The app uses Firebase for hosting and authentication, and Genkit with Gemini LLMs for AI capabilities.
