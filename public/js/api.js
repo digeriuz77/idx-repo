@@ -1,0 +1,1 @@
+// We don't need this file anymore as we're using direct fetch calls in app.js

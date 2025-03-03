@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MI-Dojo | Motivational Interviewing Practice</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥋</text></svg>">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <div class="logo">
+        <span class="logo-icon">🥋</span>
+        <h1>MI-Dojo</h1>
+      </div>
+      <div class="tagline">Practice Motivational Interviewing with AI-powered personas</div>
+    </header>
+
+    <main>
+      <div id="welcome-screen" class="screen">
+        <div class="welcome-content">
+          <h2>Welcome to MI-Dojo</h2>
+          <p>Improve your motivational interviewing skills by practicing with realistic AI personas.</p>
+          
+          <div class="create-persona-form">
+            <h3>Create a Practice Persona</h3>
+            
+            <div class="form-group">
+              <label for="scenario-type">Scenario Type:</label>
+              <select id="scenario-type" required>
+                <option value="addiction">Addiction</option>
+                <option value="chronic_illness">Chronic Illness</option>
+                <option value="lifestyle_change">Lifestyle Change</option>
+                <option value="mental_health">Mental Health</option>
+                <option value="preventive_care">Preventive Care</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="change-readiness">Change Readiness:</label>
+              <select id="change-readiness" required>
+                <option value="pre_contemplation">Pre-contemplation</option>
+                <option value="contemplation">Contemplation</option>
+                <option value="preparation">Preparation</option>
+                <option value="action">Action</option>
+                <option value="maintenance">Maintenance</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="additional-context">Additional Context (optional):</label>
+              <textarea id="additional-context" rows="3" placeholder="Add specific details for your client persona..."></textarea>
+            </div>
+            
+            <div class="form-group">
+              <label for="communication-sample">Communication Sample (optional):</label>
+              <textarea id="communication-sample" rows="5" placeholder="Paste a sample of how this persona might speak to help AI mimic their speech patterns..."></textarea>
+              <div class="help-text">Adding a sample of how this persona might speak will help the AI mimic their speech patterns more accurately.</div>
+            </div>
+            
+            <button id="create-persona-btn" class="primary-btn">Create Persona</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="chat-screen" class="screen hidden">
+        <div class="chat-container">
+          <div class="sidebar">
+            <div class="persona-details">
+              <h3>Persona Details</h3>
+              <div id="persona-info"></div>
+            </div>
+            <div class="sidebar-actions">
+              <button id="get-coaching-btn" class="primary-btn" disabled>Get Feedback</button>
+              <button id="end-session-btn" class="secondary-btn">End Session</button>
+            </div>
+          </div>
+          
+          <div class="chat-main">
+            <div id="chat-messages" class="chat-messages"></div>
+            
+            <div class="chat-input-container">
+              <div id="coaching-feedback" class="coaching-feedback hidden">
+                <div class="coaching-header">
+                  <span class="coaching-icon">💡</span>
+                  <h4>Coaching Tip</h4>
+                </div>
+                <div id="coaching-content"></div>
+              </div>
+              
+              <div class="message-input-wrapper">
+                <textarea id="message-input" placeholder="Type your message here..." rows="3"></textarea>
+                <button id="send-message-btn" class="primary-btn">Send</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="feedback-screen" class="screen hidden">
+        <div class="feedback-container">
+          <h2>Session Feedback</h2>
+          
+          <div id="feedback-content" class="feedback-content">
+            <!-- Feedback will be rendered here -->
+          </div>
+          
+          <div class="actions">
+            <button id="back-to-chat-btn" class="primary-btn">Return to Conversation</button>
+            <button id="new-session-btn" class="secondary-btn" onclick="showScreen('welcome')">Start New Session</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="loading-overlay" class="hidden">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Processing...</div>
+      </div>
+    </main>
+
+    <footer>
+      <p>MI-Dojo - Motivational Interviewing Practice Platform</p>
+      <p>Powered by Genkit and Gemini</p>
+    </footer>
+  </div>
+</body>
+</html>
