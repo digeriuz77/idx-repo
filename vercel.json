@@ -20,10 +20,6 @@
       "dest": "public/$0"
     },
     {
-      "src": "/favicon.ico",
-      "dest": "public/favicon.ico"
-    },
-    {
       "src": "/(.*)",
       "dest": "api/vercel.js"
     }
