@@ -16,12 +16,19 @@
       "dest": "api/vercel.js"
     },
     {
-      "src": "/(.*)",
-      "dest": "public/$1"
+      "src": "/(js|css|images|assets)/.*",
+      "dest": "public/$0"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "public/favicon.ico"
     },
     {
       "src": "/(.*)",
       "dest": "api/vercel.js"
     }
-  ]
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
 }
